@@ -17,27 +17,6 @@ def test_str_to_bool_true(string):
 def test_str_to_bool_false(string):
     assert str_to_bool(string) is False
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Método final para limpar, o arquivo temporário apos a conclusão dos testes
 @pytest.fixture
 def tmpfile(tmpdir):
