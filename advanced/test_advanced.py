@@ -46,3 +46,20 @@ def tmpfile(tmpdir):
         file.write("1")
         return file.strpath
     return write
+
+class TestFile:
+    """
+    Criada um arquivo temporário no `path` do sistema, mesmo que não saiba o caminho direto,
+    o uso do `tempfile()` faz a criação desse arquivo temporário.
+    faz a abertura e criação no comando `_f.read()`
+    faz a `assert`, "escreve" no arquivo o numero 1 para realizarmos os módulos:
+    `test_str_to_bool_true` e `test_str_to_bool_false`
+    
+    Obs: A palavra-chave `assert` permite que você teste se uma condição no seu código retorna `True`, caso contrário, o programa irá gerar um `AssertionError`.
+    """
+
+    def test_f(self, tmpfile):
+        path = tmpfile()
+        with open(path) as _f:
+            contents = _f.read()
+        assert contents == "1"
